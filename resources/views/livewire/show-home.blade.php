@@ -75,51 +75,20 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipreiscing elit. Lacus penatibus tincidunt</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 service-item">
-                    <a class="text-black" href="service-details.html">
-                        <div class="block"> <span class="colored-box text-center h3 mb-4">01</span>
-                            <h3 class="mb-3 service-title">Digital Marketing</h3>
-                            <p class="mb-0 service-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 service-item">
-                    <a class="text-black" href="service-details.html">
-                        <div class="block"> <span class="colored-box text-center h3 mb-4">02</span>
-                            <h3 class="mb-3 service-title">Web Design</h3>
-                            <p class="mb-0 service-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 service-item">
-                    <a class="text-black" href="service-details.html">
-                        <div class="block"> <span class="colored-box text-center h3 mb-4">03</span>
-                            <h3 class="mb-3 service-title">SEO</h3>
-                            <p class="mb-0 service-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 service-item">
-                    <a class="text-black" href="service-details.html">
-                        <div class="block"> <span class="colored-box text-center h3 mb-4">04</span>
-                            <h3 class="mb-3 service-title">Logo Design</h3>
-                            <p class="mb-0 service-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 service-item">
-                    <a class="text-black" href="service-details.html">
-                        <div class="block"> <span class="colored-box text-center h3 mb-4">05</span>
-                            <h3 class="mb-3 service-title">Graphic Design</h3>
-                            <p class="mb-0 service-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod</p>
-                        </div>
-                    </a>
-                </div>
+
+                @if ($services->isNotEmpty())
+                @php
+                    $x=1;
+                @endphp
+                @foreach ($services as $service)
+                <x-service-card :service="$service" x="$x"/>
+                @php
+                    $x++
+                @endphp
+                @endforeach
+                
+                @endif
+                
             </div>
         </div>
     </section>
